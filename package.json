@@ -13,9 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-svg-loader": "^2.1.0",
-    "svg-url-loader": "^2.3.2"
+    "react-dom": "^16.5.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
