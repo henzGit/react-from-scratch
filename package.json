@@ -12,6 +12,7 @@
   "author": "Henz",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^3.3.1",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
