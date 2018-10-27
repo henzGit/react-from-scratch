@@ -1,44 +1,30 @@
-import React, { Component } from 'react';
-import Icon from '../../public/img/logo.svg';
-import ImgWrapper from './ImgWrapper';
-import Button from '@material-ui/core/Button';
-import PropTypes from 'prop-types';
-import { connect }from 'react-redux';
+/**
+ *
+ * App
+ *
+ * This component is the skeleton around the actual pages, and should only
+ * contain code that should be seen on all pages. (e.g. navigation bar)
+ */
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <h1>My React App</h1>
-        <ImgWrapper src={Icon}/>
-        <Button variant="contained"
-                onClick={this.props.onClick}
-                color="primary">
-          Hello World
-        </Button>
-      </div>
-    )
-  }
+import React from 'react';
+import styled from 'styled-components';
+import { Switch, Route } from 'react-router-dom';
+import HomePage from '../HomePage/index';
+
+const AppWrapper = styled.div`
+  margin: 0 auto;
+  display: flex;
+  min-height: 100%;
+  padding: 0 16px;
+  flex-direction: column;
+`;
+
+export default function App() {
+  return (
+    <AppWrapper>
+      <Switch>
+        <Route path="/" component={HomePage} />
+      </Switch>
+    </AppWrapper>
+  );
 }
-
-App.propTypes = {
-  onClick: PropTypes.func.isRequired
-};
-
-const mapStateToProps = (state) => {
-  return {
-    outputButtonTxt: state.num
-  }
-}
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onClick: () => {
-      dispatch({type: 'INCREMENT_NUM'})
-    }
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
