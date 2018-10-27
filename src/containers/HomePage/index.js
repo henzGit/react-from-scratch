@@ -5,8 +5,10 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import { connect }from 'react-redux';
 import { incrementNum } from './actions';
+import { createStructuredSelector } from 'reselect';
+import { makeSelectNum } from './selectors';
 
-class Index extends Component {
+class HomePage extends Component {
   render() {
     return (
       <div>
@@ -22,7 +24,7 @@ class Index extends Component {
   }
 }
 
-Index.propTypes = {
+HomePage.propTypes = {
   onClick: PropTypes.func.isRequired
 };
 
@@ -41,4 +43,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Index);
+)(HomePage);
