@@ -4,7 +4,7 @@ import App from './containers/App/index'
 import "babel-polyfill"
 import { Provider } from 'react-redux'
 import { applyMiddleware, compose, createStore } from 'redux'
-import { reducers } from './reducers'
+import { rootReducer } from './rootReducer'
 import { createBrowserHistory } from 'history'
 import { connectRouter, routerMiddleware, ConnectedRouter }
   from 'connected-react-router'
@@ -14,7 +14,7 @@ const history = createBrowserHistory();
 const initialState = {};
 
 const store = createStore(
-  connectRouter(history)(reducers), // new root reducer with router state
+  connectRouter(history)(rootReducer), // new root reducer with router state
   initialState,
   compose(
     applyMiddleware(
@@ -36,3 +36,4 @@ render(
 if (module.hot) {
   module.hot.accept();
 }
+
