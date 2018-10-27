@@ -15,7 +15,7 @@ class Index extends Component {
         <Button variant="contained"
                 onClick={this.props.onClick}
                 color="primary">
-          Hello World
+          Hello World {this.props.outputButtonTxt}
         </Button>
       </div>
     )
@@ -28,7 +28,7 @@ Index.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    outputButtonTxt: state.num
+    outputButtonTxt: state.homePage.get('num')
   }
 };
 
