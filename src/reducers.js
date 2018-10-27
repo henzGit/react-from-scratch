@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import appReducer from './containers/App/reducer';
+import homePageReducer from './containers/HomePage/reducer';
 
 export const reducers = combineReducers({
-  app: appReducer
+  homePage: homePageReducer
 });
