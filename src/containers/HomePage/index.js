@@ -30,7 +30,7 @@ HomePage.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    outputButtonTxt: state.homePage.get('num')
+    outputButtonTxt: makeSelectNum(state)
   }
 };
 

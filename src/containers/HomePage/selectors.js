@@ -1,28 +1,7 @@
-/**
- * Authpage selectors
- */
+import { createSelector } from 'reselect'
 
-import { createSelector } from 'reselect';
-import { initialState } from './reducer';
+const getHomePage = (state) => state.homePage;
 
-const selectAuth = state => state.get('auth', initialState);
-
-const makeSelectUsername = () =>
-  createSelector(selectAuth, authState => authState.get('username'));
-
-const makeSelectPassword = () =>
-  createSelector(selectAuth, authState => authState.get('password'));
-
-const makeSelectAuthenticating = () =>
-  createSelector(selectAuth, authState => authState.get('authenticating'));
-
-const makeSelectError = () =>
-  createSelector(selectAuth, authState => authState.get('error'));
-
-export {
-  selectAuth,
-  makeSelectUsername,
-  makeSelectPassword,
-  makeSelectAuthenticating,
-  makeSelectError
-};
+export const makeSelectNum = createSelector(
+  getHomePage, homeState => homeState.get('num')
+);
