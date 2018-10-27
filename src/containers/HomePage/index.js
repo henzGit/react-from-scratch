@@ -4,7 +4,7 @@ import ImgWrapper from './ImgWrapper';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import { connect }from 'react-redux';
-import { incrementNum } from 'actions';
+import { incrementNum } from './actions';
 
 class Index extends Component {
   render() {
