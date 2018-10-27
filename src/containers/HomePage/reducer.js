@@ -8,7 +8,7 @@ export const initialState = fromJS({
 function HomePageReducer(state = initialState, action) {
   switch (action.type) {
     case INCREMENT_NUM:
-      return state.set('num', state.num + 1);
+      return state.set('num', state.get('num') + 1);
     default:
       return state;
   }
