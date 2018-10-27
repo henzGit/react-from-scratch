@@ -1,7 +1,13 @@
 import { createSelector } from 'reselect'
 
-const getHomePage = (state) => state.homePage;
+const selectHomePage = (state) => state.homePage;
 
-export const makeSelectNum = createSelector(
-  getHomePage, homeState => homeState.get('num')
+const selectNumFromHomePage = createSelector(
+  selectHomePage, homePageState => homePageState.get('num')
 );
+
+export {
+  selectHomePage,
+  selectNumFromHomePage
+}
+
