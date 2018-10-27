@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { connect }from 'react-redux';
 import { incrementNum } from './actions';
 import { createStructuredSelector } from 'reselect';
-import { makeSelectNum } from './selectors';
+import { selectNumFromHomePage } from './selectors';
 
 class HomePage extends Component {
   render() {
@@ -28,11 +28,10 @@ HomePage.propTypes = {
   onClick: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (state) => {
-  return {
-    outputButtonTxt: makeSelectNum(state)
-  }
-};
+const mapStateToProps = (state) => createStructuredSelector(
+{
+    outputButtonTxt: selectNumFromHomePage
+})(state);
 
 const mapDispatchToProps = (dispatch) => {
   return {
