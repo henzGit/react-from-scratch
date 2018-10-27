@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Icon from '../public/img/logo.svg';
+import Icon from '../../public/img/logo.svg';
 import ImgWrapper from './ImgWrapper';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
