@@ -6,10 +6,10 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import React from 'react';
-import styled from 'styled-components';
-import { Switch, Route } from 'react-router-dom';
-import HomePage from '../HomePage/index';
+import React from 'react'
+import styled from 'styled-components'
+import { Switch, Route } from 'react-router-dom'
+import HomePage from '../HomePage/index'
 
 const AppWrapper = styled.div`
   margin: 0 auto;

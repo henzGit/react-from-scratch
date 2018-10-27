@@ -1,4 +1,4 @@
-import { INCREMENT_NUM } from './constants';
+import { INCREMENT_NUM } from './constants'
 
 /**
  * Increment number

@@ -1,5 +1,5 @@
-import { fromJS } from 'immutable';
-import { INCREMENT_NUM } from './constants';
+import { fromJS } from 'immutable'
+import { INCREMENT_NUM } from './constants'
 
 export const initialState = fromJS({
   num: 0,
