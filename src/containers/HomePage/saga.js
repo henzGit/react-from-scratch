@@ -4,7 +4,6 @@ import {gotNoStuff, gotStuff} from './actions'
 import api from './api'
 import { selectCurrentUser } from './selectors';
 
-
 function* getStuff() {
   try {
     const currentUser = yield select(selectCurrentUser);

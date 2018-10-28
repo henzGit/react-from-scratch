@@ -43,7 +43,6 @@ const mapStateToProps = (state) => createStructuredSelector(
     listRepos: selectListRepos,
     numRepos: selectNumRepos,
     currentUser: selectCurrentUser,
-
 })(state);
 
 const mapDispatchToProps = (dispatch) => {
