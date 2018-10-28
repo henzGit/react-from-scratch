@@ -19,7 +19,7 @@ class HomePage extends Component {
                 color="primary">
           You have clicked {this.props.outputButtonTxt} clicks
         </Button>
-        <h2>{this.props.listRepos}</h2>
+        <h2>This user has {this.props.listRepos} repos</h2>
       </div>
     )
   }
