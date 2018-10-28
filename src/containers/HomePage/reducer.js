@@ -3,7 +3,8 @@ import {GOT_STUFF, INCREMENT_NUM} from './constants'
 
 export const initialState = fromJS({
   num: 0,
-  data: []
+  data: [],
+  currentUser: 'henzGit'
 });
 
 function HomePageReducer(state = initialState, action) {

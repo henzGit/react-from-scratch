@@ -14,10 +14,15 @@ const selectNumRepos = createSelector(
   selectHomePage, homePageState => homePageState.get('data').length
 );
 
+const selectCurrentUser = createSelector(
+  selectHomePage, homePageState => homePageState.get('currentUser')
+);
+
 export {
   selectHomePage,
   selectNum,
   selectListRepos,
-  selectNumRepos
+  selectNumRepos,
+  selectCurrentUser
 }
 

@@ -6,7 +6,8 @@ import PropTypes from 'prop-types'
 import { connect }from 'react-redux'
 import { incrementNum, getStuff } from './actions'
 import { createStructuredSelector } from 'reselect'
-import {selectListRepos, selectNum, selectNumRepos} from './selectors'
+import {selectListRepos, selectNum, selectNumRepos, selectCurrentUser}
+  from './selectors'
 
 class HomePage extends Component {
   render() {
@@ -19,6 +20,7 @@ class HomePage extends Component {
                 color="primary">
           You have clicked {this.props.outputButtonTxt} clicks
         </Button>
+        <h2>Selected user is {this.props.currentUser} </h2>
         <h2>This user has {this.props.numRepos} repos</h2>
       </div>
     )
@@ -33,7 +35,9 @@ const mapStateToProps = (state) => createStructuredSelector(
 {
     outputButtonTxt: selectNum,
     listRepos: selectListRepos,
-    numRepos: selectNumRepos
+    numRepos: selectNumRepos,
+    currentUser: selectCurrentUser,
+
 })(state);
 
 const mapDispatchToProps = (dispatch) => {
