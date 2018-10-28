@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { connect }from 'react-redux'
 import { incrementNum, getStuff } from './actions'
 import { createStructuredSelector } from 'reselect'
-import { selectNumFromHomePage } from './selectors'
+import {selectListRepos, selectNum} from './selectors'
 
 class HomePage extends Component {
   render() {
@@ -17,8 +17,9 @@ class HomePage extends Component {
         <Button variant="contained"
                 onClick={this.props.onClick}
                 color="primary">
-          Hello World {this.props.outputButtonTxt}
+          You have clicked {this.props.outputButtonTxt} clicks
         </Button>
+        <h2>{this.props.listRepos}</h2>
       </div>
     )
   }
@@ -30,7 +31,8 @@ HomePage.propTypes = {
 
 const mapStateToProps = (state) => createStructuredSelector(
 {
-    outputButtonTxt: selectNumFromHomePage
+    outputButtonTxt: selectNum,
+    listRepos: selectListRepos
 })(state);
 
 const mapDispatchToProps = (dispatch) => {
