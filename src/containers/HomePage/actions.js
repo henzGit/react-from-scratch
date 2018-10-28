@@ -28,10 +28,10 @@ export function getStuff() {
  *
  * @return {object} An action object with a type of GOT_STUFF
  */
-export function gotStuff(data) {
+export function gotStuff(response) {
   return {
     type: GOT_STUFF,
-    data
+    response
   };
 }
 
