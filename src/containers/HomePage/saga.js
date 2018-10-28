@@ -7,7 +7,6 @@ function* getStuff() {
   try {
     console.log('trying to get stuff: ');
     const data = yield call(api.getStuff);
-    console.log(data);
     yield put(gotStuff(data));
   } catch (error) {
     console.log('saga failed: ', error);
