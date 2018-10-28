@@ -1,4 +1,10 @@
-import { INCREMENT_NUM, GET_STUFF, GOT_STUFF, GOT_NO_STUFF }
+import {
+  INCREMENT_NUM,
+  GET_STUFF,
+  GOT_STUFF,
+  GOT_NO_STUFF,
+  CHANGE_USERNAME
+}
   from './constants'
 
 /**
@@ -44,5 +50,17 @@ export function gotNoStuff(error) {
   return {
     type: GOT_NO_STUFF,
     error
+  };
+}
+
+/**
+ * Change user name
+ *
+ * @return {object} An action object with a type of CHANGE_USERNAME
+ */
+export function changeUserName(username) {
+  return {
+    type: CHANGE_USERNAME,
+    username
   };
 }
