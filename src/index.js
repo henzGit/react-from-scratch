@@ -6,8 +6,8 @@ import { Provider } from 'react-redux'
 import {ConnectedRouter} from 'connected-react-router'
 import configureStore from './configureStore'
 import {createBrowserHistory} from "history";
-const rootEl = document.getElementById('app');
 
+const rootEl = document.getElementById('app');
 const initialState = {};
 const history = createBrowserHistory();
 const store = configureStore(initialState, history);
