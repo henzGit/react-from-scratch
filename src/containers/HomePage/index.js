@@ -4,7 +4,8 @@ import ImgWrapper from './ImgWrapper'
 import Button from '@material-ui/core/Button'
 import PropTypes from 'prop-types'
 import { connect }from 'react-redux'
-import { incrementNum, getStuff } from './actions'
+import { incrementNum, getStuff, changeUserName } from
+    './actions'
 import { createStructuredSelector } from 'reselect'
 import {selectListRepos, selectNum, selectNumRepos, selectCurrentUser}
   from './selectors'
@@ -18,8 +19,13 @@ class HomePage extends Component {
         <Button variant="contained"
                 onClick={this.props.onClick}
                 color="primary">
-          You have clicked {this.props.outputButtonTxt} clicks
+          You have clicked {this.props.outputButtonTxt} times
         </Button>
+        <h2/>
+        <input type="text" placeholder="Input user name..."
+               value={this.props.currentUser}
+               onChange={this.props.handleFilterTextChange}
+        />
         <h2>Selected user is {this.props.currentUser} </h2>
         <h2>This user has {this.props.numRepos} repos</h2>
       </div>
@@ -46,6 +52,9 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(incrementNum());
       dispatch(getStuff());
     },
+    handleFilterTextChange : (evt) => {
+      dispatch(changeUserName(evt.target.value))
+    }
   }
 };
 
