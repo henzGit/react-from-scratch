@@ -4,7 +4,7 @@ import ImgWrapper from './ImgWrapper'
 import Button from '@material-ui/core/Button'
 import PropTypes from 'prop-types'
 import { connect }from 'react-redux'
-import { incrementNum } from './actions'
+import { incrementNum, getStuff } from './actions'
 import { createStructuredSelector } from 'reselect'
 import { selectNumFromHomePage } from './selectors'
 
@@ -35,7 +35,10 @@ const mapStateToProps = (state) => createStructuredSelector(
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick: () => dispatch(incrementNum()),
+    onClick: () => {
+      dispatch(incrementNum());
+      dispatch(getStuff());
+    },
   }
 };
 
