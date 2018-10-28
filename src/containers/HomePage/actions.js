@@ -1,4 +1,4 @@
-import { INCREMENT_NUM } from './constants'
+import { INCREMENT_NUM, GET_STUFF } from './constants'
 
 /**
  * Increment number
@@ -8,5 +8,16 @@ import { INCREMENT_NUM } from './constants'
 export function incrementNum() {
   return {
     type: INCREMENT_NUM,
+  };
+}
+
+/**
+ * Get stuff
+ *
+ * @return {object} An action object with a type of GET_STUFF
+ */
+export function getStuff() {
+  return {
+    type: GET_STUFF,
   };
 }
