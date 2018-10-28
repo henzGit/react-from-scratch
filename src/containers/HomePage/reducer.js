@@ -11,7 +11,7 @@ function HomePageReducer(state = initialState, action) {
     case INCREMENT_NUM:
       return state.set('num', state.get('num') + 1);
     case GOT_STUFF:
-      return state.set('data', action.data);
+      return state.set('data', action.response.data);
     default:
       return state;
   }
