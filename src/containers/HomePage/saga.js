@@ -8,8 +8,10 @@ import { selectCurrentUser } from './selectors';
 function* getStuff() {
   try {
     const currentUser = yield select(selectCurrentUser);
+    const url = 'https://api.github.com/users/'
+      + currentUser + '/repos?type=all&sort=updated';
     console.log('trying to get stuff for : ' + currentUser);
-    const data = yield call(api.getStuff);
+    const data = yield call(api.getStuff, url);
     yield put(gotStuff(data));
   } catch (error) {
     console.log('saga failed: ', error);
