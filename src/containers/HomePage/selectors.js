@@ -7,12 +7,17 @@ const selectNum = createSelector(
 );
 
 const selectListRepos = createSelector(
+  selectHomePage, homePageState => homePageState.get('data')
+);
+
+const selectNumRepos = createSelector(
   selectHomePage, homePageState => homePageState.get('data').length
 );
 
 export {
   selectHomePage,
   selectNum,
-  selectListRepos
+  selectListRepos,
+  selectNumRepos
 }
 
